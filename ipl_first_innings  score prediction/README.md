@@ -1,4 +1,4 @@
-# Car-Price-Prediction
+# IPL first innings score prediction
 # Demo
  https://iplprediction1.herokuapp.com/
 
