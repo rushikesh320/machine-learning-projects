@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+	 <h2 align="center">Predictive analysis</h2>
+
+    <div  class="form">
+    	
+        <form action="{{ url_for('predict')}}" method="post">
+           
+            <h3>Year</h3>
+            <input id="first" name="Year" type="number "placeholder="Enter year of manifacture">
+            <h3>What is the Showroom Price?(In lakhs)</h3><br><input id="second" name="Present_Price" required="required" placeholder="enter price in lakh eg- 3 or 4.5">
+            <h3>How Many Kilometers Drived?</h3><input id="third" name="Kms_Driven" required="required" placeholder="enter Kilometers Drived">
+            <h3>How much owners previously had the car(0 or 1 or 3) ?</h3><br><input id="fourth" name="Owner" required="required" placeholder="select 0 or 1 or 3">
+            <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Cng">CNG</option>
+            </select>
+            <h3>Are you A Dealer or Individual</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+    
+        
+        #fuel {
+            width: 103px;
+            height: 23px;
+            text-align: center;
+           
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 153px;
+            height: 23px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 109px;
+            height: 23px;
+            text-align: center;
+           
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+        	
+
+
+
+            background: #4b8df9; display: inline-block; padding: 5px 10px 6px; color: #fbf7f7; text-decoration: none; font-weight: bold; line-height: 1; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: 0 1px 3px #999; -webkit-box-shadow: 0 1px 3px #999; box-shadow: 0 1px 3px #999; text-shadow: 0 -1px 1px #222; border: none; position: relative; cursor: pointer; font-size: 14px; font-family:Verdana, Geneva, sans-serif;
+        }
+        
+        #sub:hover {
+            background-color: #2a78f6;
+        }
+        
+        #first {
+            
+            height: 15px;
+            font-size: 13px;
+            text-align: center;
+        }
+        
+        #second {
+            
+            height: 15px;
+            font-size: 13px;
+            text-align: center;
+        }
+        
+        #third {
+            
+            height: 15px;
+            font-size: 13px;
+            text-align: center;
+        }
+        
+        #fourth {
+            
+            height: 15px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+
+
+
+
+
+
+
+
+
+
+.form{
+	background:#f1f1f1; width:470px; margin:0 auto; padding-left:50px; padding-top:15px
+}
+.form fieldset{border:0px; padding:0px; margin:0px;}
+.form p.contact { font-size: 12px; margin:0px 0px 10px 0;line-height: 14px; font-family:Arial, Helvetica;}
+
+
+.form input, textarea { background-color: rgba(255, 255, 255, 0.4); border: 1px solid rgba(122, 192, 0, 0.15); padding: 7px; font-family: Keffeesatz, Arial; color: #4b4b4b; font-size: 16px; -webkit-border-radius: 5px; margin-bottom: 15px; margin-top: -10px; }
+.form input:focus, textarea:focus { border: 1px solid #ff5400; background-color: rgba(255, 255, 255, 1); }
+.form .select-style {
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url(images/select-arrow.png), 
+    -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 0px solid #FFF;
+  color: #555;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;}
+.form .Fuel_Type_Petrol {
+  width:410px;
+  }
+
+    </style>
+</body>
+
+</html>
