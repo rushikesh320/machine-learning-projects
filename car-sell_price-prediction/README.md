@@ -6,4 +6,4 @@
 Deployed at: https://old-car-sale.herokuapp.com/
 
 • If you are searching for Code, Algorithms used and Accuracy of the model.. you won't find it here. Click the link mentioned below for the same:
-Link: https://github.com/rushikesh320/car-sell-prediction
+Link: https://github.com/rushikesh320/machine-learning-preojects/tree/master/car-sell_price-prediction
